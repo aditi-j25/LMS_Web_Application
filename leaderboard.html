@@ -2,25 +2,6 @@
 <html>
     <head>
         <title> Leaderboard - LMS </title>
-        <!-- <style>
-             /* table {
-                border-collapse: collapse; /* Ensures a single, clean grid */
-                width: 100%;
-                text-align: center;
-                margin: 0px;
-    
-            } */
-            /* td {
-                border-collapse: collapse;
-                border: 1px solid black; 
-                text-align: center; 
-            } */
-
-            /* tr {
-                border-collapse: collapse;
-                border: 1px solid black; 
-            } */
-        </style> -->
     </head>
     <body>
         <header> 
@@ -35,78 +16,82 @@
         <br> <br> <br>
 
         <main>
-            <table style = "border-collapse: collapse; width: 100%; margin: 0px; text-align:center;" border="1">
-                <tr>
-                
-                    <th colspan="5" style = "height: 50px; background-color: rgb(22, 180, 22); color: white;"> <h1 style = "margin:0px">Leaderboard</h1> </th>
-    
+            <table width="100%" align="center" border="1" style = "border-collapse: collapse;">
+                <tr align="center">
+                    <th colspan="5" height="30" bgcolor="#40a829">
+                        <h1 style="margin: 0px;">
+                            <font size="7" color="white">Leaderboard</font>
+                        </h1>
+                    </th>
                 </tr>
-
-                <tr>
-                    <th style = "height:10px;"><h2 style = "margin:0px">Rank</h2></th>
-                    <th style = "height:10px;"><h2 style = "margin:0px">Profile Picture</h2></th>
-                    <th style = "height:10px;"><h2 style = "margin:0px">Name</h2></th>
-                    <th style = "height:10px;"><h2 style = "margin:0px">Total Score</h2></th>
-                    <th style = "height:10px;"><h2 style = "margin:0px">Course</h2></th>
-
+            
+                <tr align="center">
+                    <th height="10px"><h2>Rank</h2></th>
+                    <th height="10px"><h2>Profile Picture</h2></th>
+                    <th height="10px"><h2>Name</h2></th>
+                    <th height="10px"><h2>Total Score</h2></th>
+                    <th height="10px"><h2>Course</h2></th>
                 </tr>
-
-                <tr style = "background-color: gold;">
-                    <td style = "font-size: 20px;"> 1 </td>
+            
+                <tr align="center" bgcolor="gold">
+                    <td><font size="5">1</font></td>
+                    <td ><img src="student.png" width="70px" height="70px"></td>
+                    <td><font size="5">John Doe</font></td>
+                    <td><font size="5">95</font></td>
+                    <td><font size="5">Web Development</font></td>
+                </tr>
+            
+                <tr align="center" bgcolor="silver">
+                    <td rowspan="2"><font size="5">2</font></td>
                     <td><img src="student.png" width="70px" height="70px"></td>
-                    <td style = "font-size: 20px;"> John Doe </td>
-                    <td style = "font-size: 20px;"> 95 </td>
-                    <td style = "font-size: 20px;"> Web Development</td>
-
+                    <td><font size="5">Jane Smith</font></td>
+                    <td><font size="5">90</font></td>
+                    <td><font size="5">Data Structures</font></td>
                 </tr>
-
-                <tr style = "background-color: silver;"> 
-                    <td rowspan = "2" style = "font-size: 20px;" > 2 </td>
+            
+                <tr align="center" bgcolor="silver">
                     <td><img src="student.png" width="70px" height="70px"></td>
-                    <td style = "font-size: 20px;"> Jane Smith </td>
-                    <td style = "font-size: 20px;"> 90 </td>
-                    <td style = "font-size: 20px;"> Data Structures</td>
-
+                    <td><font size="5">Emily White</font></td>
+                    <td><font size="5">90</font></td>
+                    <td><font size="5">Algorithms</font></td>
                 </tr>
-
-                <tr style = "background-color: silver;">
+            
+                <tr align="center" bgcolor="#cd7f32">
+                    <td><font size="5">3</font></td>
                     <td><img src="student.png" width="70px" height="70px"></td>
-                    <td style = "font-size: 20px;"> Emily White </td>
-                    <td style = "font-size: 20px;"> 90 </td>
-                    <td style = "font-size: 20px;"> Algorithms</td>
-
+                    <td><font size="5">Michael Brown</font></td>
+                    <td><font size="5">85</font></td>
+                    <td><font size="5">Machine Learning</font></td>
                 </tr>
-
-                <tr style = "background-color: #cd7f32;">
-                    <td style = "font-size: 20px;">3</td>
+            
+                <tr  align="center">
+                    <td><font size="5">4</font></td>
                     <td><img src="student.png" width="70px" height="70px"></td>
-                    <td style = "font-size: 20px;">Michael Brown</td>
-                    <td style = "font-size: 20px;">85</td>
-                    <td style = "font-size: 20px;">Machine Learning</td>
-
+                    <td><font size="5">Sarah Johnson</font></td>
+                    <td><font size="5">80</font></td>
+                    <td><font size="5">Networking</font></td>
                 </tr>
-
-                <tr>
-                    <td style = "font-size: 20px;">4</td>
+            
+                <tr align="center" bgcolor="lightgray">
+                    <td><font size="5">5</font></td>
                     <td><img src="student.png" width="70px" height="70px"></td>
-                    <td style = "font-size: 20px;">Sarah Johnson</td>
-                    <td style = "font-size: 20px;">80</td>
-                    <td style = "font-size: 20px;">Networking</td>
-                </tr>
-
-                <tr style = "background-color: lightgray;">
-                    <td style = "font-size: 20px;">5</td>
-                    <td><img src="student.png" width="70px" height="70px"></td>
-                    <td style = "font-size: 20px;">Rob Miller</td>
-                    <td style = "font-size: 20px;">75</td>
-                    <td style = "font-size: 20px;">Networking</td>
+                    <td><font size="5">Rob Miller</font></td>
+                    <td><font size="5">75</font></td>
+                    <td><font size="5">Networking</font></td>
                 </tr>
             </table>
+            
+              
         </main>
         <br>
         <footer>© 2025 LMS. All rights reserved.</footer>
 
     </body>
+
+
+
+
+</html>
 
 
 
