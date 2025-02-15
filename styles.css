@@ -1,0 +1,130 @@
+/* ============================= */
+/* Global Styles */
+/* ============================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* ============================= */
+/* Header Styling (All Pages) */
+/* ============================= */
+header {
+    display: flex;
+    justify-content: space-between; /* Logo on left, LMS name on right */
+    background-color: #004080;
+    padding: 20px;
+    margin: 0;
+}
+
+/* ============================= */
+/* Navigation Bar (All Pages) */
+/* ============================= */
+nav {
+    display: flex;
+    justify-content: space-around; /* Even spacing */
+    background-color: #003366;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* Main Content - Homepage */
+/* ============================= */
+main {
+    background-color: #d4d4d4;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+ } /* Soft shadow effect */
+
+
+/* ============================= */
+/* Footer (All Pages) */
+/* ============================= */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ============================= */
+/* Login Page - Centered Form */
+/* ============================= */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-form {
+    background-color: #d4d4d4;
+    padding: 30px;
+    margin: 0 150px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"] {
+    background-color: lightyellow;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid darkgray;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Login Button */
+button {
+    background-color: #008000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #006600;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    color: #004080;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* Course View - Dropdown Styling */
+/* ============================= */
+select {
+    background-color: lightyellow;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid darkgray;
+    font-size: 16px;
+}
