@@ -1,30 +1,32 @@
 <!DOCTYPE html> 
 <html>
-	<head>
+	<header>
 		<link rel="stylesheet" href="styles.css">
 		<title> Login - LMS </title>
 		<img src="logo.jpg" width="150" height="150"> 
 		<h1>LMS - Learning Management System</h1>	
-	</head>
+	</header>
 	
 	<body>
-	<h3 id="login"> LMS Login</h3>
-	<div>
+	<nav>
 		<a href="index.html">Homepage</a>
-	</div><br><br>
+	</nav><br><br>
+	<h3 id="login"> LMS Login</h3>
+	
 	<main>
 		<form>
 			<label for="username">Username</label>
 			<input type="text" id="username" name="username"><br><br>
 			<label for="password">Password</label>
 			<input type="password" id="password" name="password">
-		</form><br>
-		<a href="course_view.html"> <button>Login</button> </a> 
+			<br>
+		</form>
+		<a href="course_view.html"> <button id="loginbutton">Login</button> </a> 
 		<br><br>
 		<a href="#login">Forgot Password?</a>
 	
 	</main>
-	<footer><p>&copy; 2025 LMS. All rights reserved.</p> </footer>
 
+	<footer><p>&copy; 2025 LMS. All rights reserved.</p> </footer>
 	</body>
 </html>

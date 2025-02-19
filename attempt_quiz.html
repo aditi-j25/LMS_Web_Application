@@ -1,49 +1,59 @@
 <!DOCTYPE html> 
 <html>
-	<head>
+	<header>
 		<link rel="stylesheet" href="styles.css">
 		<title> Attempt Quiz - LMS </title>
 		<img src="logo.jpg" width="150" height="150"> 
 		<h1>LMS - Learning Management System</h1>	
-	</head>
+	</header>
 	<body>
-	<h2>LMS - Attempt Quiz</h2>
-	<div>
-		<a href="index.html">Homepage |</a>
-		<a href="course_view.html"> Course </a>
-	</div><br>
+	<h2 id="attempt">LMS - Attempt Quiz</h2>
+	<nav>
+		<a href="index.html">Homepage </a>
+		<a href="course_view.html"> Courses </a>
+	</nav><br>
 	<img src="banner.jpg" width="100%">
-	<h2>Course Name: Web Development <br> Course Code: WD381</h2>
-		<p>Topic: HTML Basics</p>
-		<p>Deadline: 11:59 PM, February 10, 2025</p>
-		<p>Attempts Allowed: 1 </p>
-	
-	<form>
-	<div>
-	<h3><b>Question1</b></h3>
-	<p>What does HTML stand for?</p>
-		<input type="radio" id="html" name="html">
-		<label for "html">Hyper Text Markup Language</label>
-		<br>
-		<input type="radio" id="html" name="html">
-		<label for "html">Home Tool Markup Language</label>
-		<br>
-		<button>Submit Answer</button>
-	</div>
-	<div>
-	<h3><b>Question2</b></h3>
-	<p>Which of the following are HTML elements? (Select all that apply)</p>
-		<input type="checkbox" id="element1" name="element1">
-		<label for="element1"> &ltdiv&gt </label> 
-		<br>
-		<input type="checkbox" id="element2" name="element2">
-		<label for="element2"> &ltspan&gt  </label>
-		<br> 
-		<button>Submit Answer</button>
-	</div>
-	<br>
+
+	<h2 id="coursename">Course Name: Web Development <br> Course Code: WD381</h2>
+		<p id="course">Topic: HTML Basics</p>
+		<p id="course">Deadline: 11:59 PM, February 10, 2025</p>
+		<p id="course">Attempts Allowed: 1 </p>
+
+	<form id="quiztime">
+			<div class="question-container">
+				<h3 id="Question">Question 1</h3>
+				<p id="actual_ques">What does HTML stand for?</p>
+				<div class="options">
+					<div class="option-item">
+						<input type="radio" name="html" id="html1">
+						<label for="html1">Hyper Text Markup Language</label>
+					</div>
+					<div class="option-item">
+						<input type="radio" name="html" id="html2">
+						<label for="html2">Home Tool Markup Language</label>
+					</div>
+				</div>
+				<button id="submit">Submit Answer</button>
+			</div>
+		
+			<div class="question-container">
+				<h3 id="Question">Question 2</h3>
+				<p id="actual_ques">Which of the following are HTML elements? (Select all that apply)</p>
+				<div class="options">
+					<div class="option-item">
+						<input type="checkbox" id="div">
+						<label for="div">&lt;div&gt;</label>
+					</div>
+					<div class="option-item">
+						<input type="checkbox" id="span">
+						<label for="span">&lt;span&gt;</label>
+					</div>
+				</div>
+				<button id="submit">Submit Answer</button>
+			</div>
+		
 	</form>
-	<a  href="leaderboard.html"><button>Finish Quiz</button></a>
+	<a  href="leaderboard.html"><button id="Finish">Finish Quiz</button></a>
 	
 	
 	

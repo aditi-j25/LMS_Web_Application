@@ -1,12 +1,14 @@
 /* ============================= */
 /* Global Styles */
 /* ============================= */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
+    text-align: center;
+    background-color: #d4d4d4;
+    }
 
 /* ============================= */
 /* Header Styling (All Pages) */
@@ -14,9 +16,15 @@ body {
 header {
     display: flex;
     justify-content: space-between; /* Logo on left, LMS name on right */
+    color: white;
     background-color: #004080;
     padding: 20px;
     margin: 0;
+    text-align: center;
+}
+
+header img{
+    margin-right: 20px;
 }
 
 /* ============================= */
@@ -27,14 +35,13 @@ nav {
     justify-content: space-around; /* Even spacing */
     background-color: #003366;
     padding: 10px;
+    text-align: center;
 }
 
 nav a {
-    color: white;
+    color: white; /* white text*/
     text-decoration: none;
-    font-size: 16px;
-    padding: 8px 15px;
-    transition: all 0.3s ease-in-out;
+    font-size: 16px;  
 }
 
 nav a:hover {
@@ -44,20 +51,49 @@ nav a:hover {
 /* ============================= */
 /* Main Content - Homepage */
 /* ============================= */
+#About {    /* about lms */
+    color: #004080 ;
+    text-align: center;
+}
+
 main {
     background-color: #d4d4d4;
     text-align: center;
+    list-style-position: inside ;
     padding: 20px;
     margin: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
- } /* Soft shadow effect */
+}
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    text-align: left; /* Aligns text to the left */
+    display: inline-block; /* Ensures it stays centered if needed */
+}
 
+ul li {
+    position: relative;
+    padding-left: 20px; /* Creates space for the dash */
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: "–"; /* Dash as a bullet */
+    position: absolute;
+    left: 0;
+    color: black;
+    font-weight: bold;
+}
+
+#key{ /* key features*/
+    font-weight: bold;
+    margin-bottom: 0;
+}
 
 /* ============================= */
 /* Footer (All Pages) */
 /* ============================= */
-footer {
+footer p {
     background-color: #004080;
     color: white;
     text-align: center;
@@ -66,21 +102,25 @@ footer {
 
 /* ============================= */
 /* Login Page - Centered Form */
-/* ============================= */
-.login-container {
+/* ============================= */ 
+main form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 80vh;
+    background-color: darkgray;
+    padding: 30px;
+    height:100%;
+    margin: 0 0 150px ;
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
-.login-form {
-    background-color: #d4d4d4;
-    padding: 30px;
-    margin: 0 150px;
-    border-radius: 30px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
+main form *{
+    margin-bottom: 10px;
+}
+main form label{
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 /* Input Fields */
@@ -88,25 +128,31 @@ input[type="text"], input[type="password"] {
     background-color: lightyellow;
     padding: 10px;
     border-radius: 5px;
-    border: 3px solid darkgray;
-    width: 100%;
-    margin-bottom: 10px;
+    border-width: 3px ;
+    border-color: darkgray;
+    width: 50%;
+    margin: 0;
+}
+
+input:focus, button:focus {
+    outline: 2px solid blue;
 }
 
 /* Login Button */
-button {
+#loginbutton {
     background-color: #008000;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    cursor: pointer; 
+    margin-top: 0px;
 }
 
-button:hover {
+#loginbutton:hover {
     background-color: #006600;
 }
+
 
 /* Forgot Password Link */
 .forgot-password {
@@ -118,13 +164,129 @@ button:hover {
     text-decoration: underline;
 }
 
+
 /* ============================= */
 /* Course View - Dropdown Styling */
+/* ============================= */ 
+
+
 /* ============================= */
-select {
-    background-color: lightyellow;
-    border-radius: 5px;
-    padding: 8px;
-    border: 1px solid darkgray;
+/*Attempt Quiz Page */
+/* ============================= */ 
+
+#attempt {display: none;}
+
+img[src="banner.jpg"] {
+    width: 100%;
+    height: 150px;
+    border-radius: 1px;
+    display: block;
+    margin: 20px auto;
+}
+
+#coursename, #course {
+    text-align: center;
+    background-color: lightblue;
+    padding: 20px;
+    margin: 0 250px;
+}
+
+#coursename {
+    color: #004080 ;
+    font-weight: bold;
+}
+
+/* Quiz Questions Styling */
+
+ #Question{
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    background-color: transparent;
+}
+
+ #quiztime{
+    padding: 15px;
+    margin: 20px auto;
+    width: 50%;
+    
+}
+
+#actual_ques {
     font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Make sure question number and text are stacked properly */
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.options {
+    padding: 10px;
+    width: 60%;
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: #cacaca;
+    text-align: center;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input & label */
+}
+
+/* Align radio and checkbox inputs properly */
+input[type="radio"], input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+}
+
+label {
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Buttons Styling */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Submit Answer Button */
+#submit {
+    background-color: lightblue;
+    color: black;
+    display: block;
+
+}
+
+#submit:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+/* Finish Quiz Button */
+#Finish {
+    background-color: #D32F2F;
+    color: white;
+}
+
+#Finish:hover {
+    background-color: #821b1b;
 }
