@@ -72,13 +72,13 @@ ul {
 
 ul li {
     position: relative;
-    padding-left: 20px; /* Creates space for the dash */
+    padding-left: 10px; /*Creates space for the dash */
     text-align: left;
     margin-bottom: 10px;
 }
 
 ul li::before {
-    content: "–"; /* Dash as a bullet */
+    content: "-"; /* Dash as a bullet */
     position: absolute;
     left: 0;
     color: black;
@@ -107,7 +107,7 @@ main form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: darkgray;
+    background-color: darkgrey;
     padding: 30px;
     height:100%;
     margin: 0 0 150px ;
@@ -290,3 +290,98 @@ button {
 #Finish:hover {
     background-color: #821b1b;
 }
+
+/* ============================= */
+/*Course View */
+/* ============================= */ 
+
+/* Term Selection Styling */
+
+#term {
+    background-color: lightyellow;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+/* Course Titles */
+
+.course {
+    background-color: #e6f2ff;
+    box-shadow: rgba(83, 82, 82, 0.15) 5px 5px 5px;
+    display: table-cell;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+/* Accept and Decline Buttons */
+
+.accept {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.accept:hover {
+    background-color: #265e26;
+}
+
+.decline {
+    background-color: #D32F2F;
+    color: white;
+}
+.decline:hover {
+    background-color: #821b1b;
+}
+
+/* ============================= */
+/* Leaderboard */
+/* ============================= */ 
+
+.table-container {   /* To ensure that the header spans over 5 columns, create a container that displays using grid */
+    display: grid;
+    background-color: #4CAF50;
+
+}
+
+#tableheader {
+    height: 10px;
+    text-align: center;
+    color: white;
+    background-color: #4CAF50;
+    grid-column: span 5; /* This is the equivilent of colspan in CSS ensuring that the header spans over 5 columns in a grid container */
+    line-height: 10px; /* Ensure that the height of the text is aligned with the height of the container */
+}
+
+/* Table Styling */
+
+#leaderboardtable { 
+    border-collapse: collapse;
+}
+
+#leaderboardtable th { border: 0px; }
+
+#leaderboardtable tr, td { 
+    border: 3px solid #d4d4d4; 
+    border-radius: 5px;
+}
+
+.titles h3 { margin: 0px;}
+
+
+
+.gold { background-color: #FFD700; }
+.silver { background-color: #c0c0c0; }
+.bronze { background-color: #cd7f32; }
+.grey { background-color: #e4e2e2; }
+.white { background-color: #f9f9f9; }
+
+/* Profile picture Styling */
+
+.profile {
+    width:60px;
+    height:60px;
+    border-radius: 60%;
+    border: 2px solid black;
+}
+
