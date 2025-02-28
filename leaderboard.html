@@ -6,8 +6,7 @@
     </header>
     <body>
         <header> 
-            <img src="logo.jpg" 
-            width="90px" height="90px">
+            <img src="logo.jpg" width="90px" height="90px">
             <h1> LMS - Learning Management System </h1>
         </header>
 
@@ -17,65 +16,66 @@
         <br> <br> <br>
 
         <main>
-            <table width="100%" align="center" border="1" style = "border-collapse: collapse;">
+            <table id="leaderboardtable" width="100%" align="center" border="1">
                 <tr align="center">
-                    <th colspan="5" height="30" bgcolor="#40a829">
-                        <h1 style="margin: 0px;">
+                    <div class="table-container">
+                        <h1 id="tableheader">
                             <font size="7" color="white">Leaderboard</font>
-                        </h1>
-                    </th>
+                        </h1>      
+                    </div>
+            
                 </tr>
             
-                <tr align="center">
-                    <th height="10px"><h2>Rank</h2></th>
-                    <th height="10px"><h2>Profile Picture</h2></th>
-                    <th height="10px"><h2>Name</h2></th>
-                    <th height="10px"><h2>Total Score</h2></th>
-                    <th height="10px"><h2>Course</h2></th>
+                <tr align="center" class="titles">
+                    <th><h3>Rank</h3></th>
+                    <th><h3>Profile Picture</h3></th>
+                    <th><h3>Name</h3></th>
+                    <th><h3>Total Score</h3></th>
+                    <th><h3>Course</h3></th>
                 </tr>
             
-                <tr align="center" bgcolor="gold">
+                <tr class="gold" align="center">
                     <td><font size="5">1</font></td>
-                    <td ><img src="student.png" width="70px" height="70px"></td>
+                    <td ><img class= "profile" src="student.png"></td>
                     <td><font size="5">John Doe</font></td>
                     <td><font size="5">95</font></td>
                     <td><font size="5">Web Development</font></td>
                 </tr>
             
-                <tr align="center" bgcolor="silver">
+                <tr class="silver" align="center">
                     <td rowspan="2"><font size="5">2</font></td>
-                    <td><img src="student.png" width="70px" height="70px"></td>
+                    <td><img class= "profile" src="student.png"></td>
                     <td><font size="5">Jane Smith</font></td>
                     <td><font size="5">90</font></td>
                     <td><font size="5">Data Structures</font></td>
                 </tr>
             
-                <tr align="center" bgcolor="silver">
-                    <td><img src="student.png" width="70px" height="70px"></td>
+                <tr class="silver" align="center">
+                    <td><img class= "profile" src="student.png"></td>
                     <td><font size="5">Emily White</font></td>
                     <td><font size="5">90</font></td>
                     <td><font size="5">Algorithms</font></td>
                 </tr>
             
-                <tr align="center" bgcolor="#cd7f32">
+                <tr class="bronze" align="center">
                     <td><font size="5">3</font></td>
-                    <td><img src="student.png" width="70px" height="70px"></td>
+                    <td><img class= "profile" src="student.png"></td>
                     <td><font size="5">Michael Brown</font></td>
                     <td><font size="5">85</font></td>
                     <td><font size="5">Machine Learning</font></td>
                 </tr>
             
-                <tr  align="center">
+                <tr class = "white" align="center">
                     <td><font size="5">4</font></td>
-                    <td><img src="student.png" width="70px" height="70px"></td>
+                    <td><img class= "profile" src="student.png"></td>
                     <td><font size="5">Sarah Johnson</font></td>
                     <td><font size="5">80</font></td>
                     <td><font size="5">Networking</font></td>
                 </tr>
             
-                <tr align="center" bgcolor="lightgray">
+                <tr class="grey" align="center">
                     <td><font size="5">5</font></td>
-                    <td><img src="student.png" width="70px" height="70px"></td>
+                    <td><img class= "profile" src="student.png"></td>
                     <td><font size="5">Rob Miller</font></td>
                     <td><font size="5">75</font></td>
                     <td><font size="5">Networking</font></td>
@@ -85,9 +85,7 @@
               
         </main>
         <br>
-        <footer>© 2025 LMS. All rights reserved.</footer>
-
+        <footer> <p>&copy; 2025 LMS. All rights reserved. </p> </footer>
     </body>
-
-
 </html>
+
