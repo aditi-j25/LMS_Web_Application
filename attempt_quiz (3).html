@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html>
+
+	<header>
+		<link rel="stylesheet" href="styles.css">
+		<title> Attempt Quiz - LMS </title>
+		<img src="logo.jpg" width="150" height="150"> 
+		<h1>LMS - Learning Management System</h1>	
+	</header>
+	
+	<body onload="CountdownTimer()">
+	
+	<h2 id="attempt">LMS - Attempt Quiz</h2>
+	<nav>
+		<a href="index.html">Homepage </a>
+		<a href="course_view.html"> Courses </a>
+	</nav><br>
+	<img src="banner.jpg" width="100%">
+
+	<h2 id="coursename">Course Name: Web Development <br> Course Code: WD381</h2>
+		<p id="course">Topic: HTML Basics</p>
+		<p id="course">Deadline: 11:59 PM, February 10, 2025</p>
+		<p id="course">Attempts Allowed: 1 </p>
+
+	<!-- Timer Display -->
+	<h2>Time Remaining: <span id="timer">10:00</span></h2>
+	
+	<form id="quiztime">
+			<div class="question-container">
+				<h3 id="Question">Question 1</h3>
+				<p id="actual_ques">What does HTML stand for?</p>
+				<div class="options">
+					<div class="option-item">
+						<input type="radio" name="html" id="html1">
+						<label for="html1">Hyper Text Markup Language</label>
+					</div>
+					<div class="option-item">
+						<input type="radio" name="html" id="html2">
+						<label for="html2">Home Tool Markup Language</label>
+					</div>
+				</div>
+				<button type="button" id="submit" onclick="validateAndCalculateScore()">Submit Answer</button>
+			</div>
+		
+			<div class="question-container">
+				<h3 id="Question">Question 2</h3>
+				<p id="actual_ques">Which of the following are HTML elements? (Select all that apply)</p>
+				<div class="options">
+					<div class="option-item">
+						<input type="checkbox" id="div">
+						<label for="div">&lt;div&gt;</label>
+					</div>
+					<div class="option-item">
+						<input type="checkbox" id="span">
+						<label for="span">&lt;span&gt;</label>
+					</div>
+				</div>
+				<button type="button" id="submit" onclick="validateAndCalculateScore()">Submit Answer</button>
+			</div>
+		
+	</form>
+	<a  href="leaderboard.html"><button type= "button" id="Finish" onclick="validateAndCalculateScore()">Finish Quiz</button></a>
+	
+	 <!-- Score Display -->
+    <h2 id="score" style="display: none;">Final Score: </h2>
+	
+	
+	<!-- TIMER -->
+	<script>
+		function CountdownTimer(){
+			var min = 10;
+			var sec = 0;
+			var displayElement = document.getElementById("timer");
+			
+			var interval = setInterval(function(){
+			
+				if (min==0 && sec==0){
+					clearInterval(interval);
+					displayElement.textContent = "Time's up";
+					window.location.href = "leaderboard.html";
+				} else{
+					if (sec==0 && min!=0){
+						min= min-1;
+						sec = 59;
+					}	else{
+						sec = sec-1;	
+					}
+					var minString = "" + min;
+					var secString = "" + sec;
+					
+					if (min < 10) {
+						minString = "0" + min;
+					}
+					if (sec < 10) {
+						secString = "0" + sec;
+					}
+					displayElement.textContent = minString + ":" + secString;
+				}
+			},1000);
+		 
+		}	
+		function validateAndCalculateScore(){
+						
+			var score = 0;
+			var html1 = document.getElementById("html1");
+			var html2 = document.getElementById("html2");
+			
+			if (!html1.checked && !html2.checked){
+				alert("Please select an answer for Question1");
+				return;
+			}
+			if (html1.checked) { 
+				score= score+50; 
+			} /* correct answer */
+			
+			var divCheck = document.getElementById("div");
+			var spanCheck = document.getElementById("span");
+			
+			if (!divCheck.checked && !spanCheck.checked) {
+				alert("Please Select an answer for Question2");
+				return;
+			}
+			if (divCheck.checked) { 
+				score=score+25; 
+			}
+			if {spanCheck.checked) { 
+				score=score+25; 
+			)
+		
+			var ScoreElement = document.getElementById("score");
+			ScoreElement.textContent = "Final Score: "+score+" / 100";
+			ScoreElement.style.display="block";
+		}
+	
+	</script>
+
+
+	<footer><p>&copy; 2025 LMS. All rights reserved.</p> </footer>
+	</body>
+	
+</html>
