@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html> 
-    <header>
+    <head>
         <link rel="stylesheet" href="styles.css">
         <title> Course View - LMS </title>
-    </header>
+    </head>
     <body>
+        <script>
+          function handleClick(event) {
+                let enrolledClass = document.getElementById("enrolled");
+                let pendingClass = document.getElementById("pending"); 
+               
+                if (event.target.matches('.accept')) { // The event (onclick), and the target which is the button that was clicked matches the class name accept
+                    enrolledClass.appendChild(pendingClass); 
+
+                    let message = document.createElement('p');
+                    message.textContent = "Attempt Quiz in Progress...";
+                    pendingClass.appendChild(message);
+
+                    document.getElementById("img").setAttribute("src", "course1.jpg");
+
+                    let buttons = Array.from(pendingClass.getElementsByTagName('button'));  // Turn the number of buttons into an array
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].remove();
+                    }       
+                    
+                }else if(event.target.matches('.decline')) {
+                    pendingClass.remove(); 
+                }
+
+             }
+
+            function handleClick2(event) {
+                let enrolledClass = document.getElementById("enrolled2");
+                let pendingClass = document.getElementById("pending2"); 
+                
+                if (event.target.matches('.accept')) {
+                    enrolledClass.appendChild(pendingClass); 
+
+                    let message = document.createElement('p');
+                    message.textContent = "Attempt Quiz in Progress...";
+                    pendingClass.appendChild(message);
+
+                    document.getElementById("img2").setAttribute("src", "course1.jpg");
+
+                    let buttons = Array.from(pendingClass.getElementsByTagName('button'));  // Turn the number of buttons into an array
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].remove();
+                    }
+                
+                }else if(event.target.matches('.decline')) {
+                    pendingClass.remove(); 
+                }
+
+            }
+
+        </script>
+        
         <header> 
-            <img src="logo.jpg" 
-            width="80px" height="80px">
+            <img src="logo.jpg" width="80px" height="80px">
             <h1> LMS - Learning Management System </h1>
             <h2> LMS - Course View </h2>
         </header>
 
         <nav>
-            <a href = "index.html"> Homepage </a>
+            <a href="index.html"> Homepage </a>
         </nav>
 
         <main>
@@ -28,112 +78,102 @@
                 </select>
             </p>
 
-            <h2 id = "About"> Enrolled Courses </h2>
+            <h2 id="About"> Enrolled Courses </h2>
             <hr>
             <table>
-                <tr>
+                <tr id="enrolled">
                     <td class="course"> 
                         <div>
                             <img src="course1.jpg" width="250">
+                            <h4 class="course-name">Course Name: Web Development </h4>
                             <p>
-                                Course Name: Web Development 
-                                <br><br>
                                 Course Code: WD381
                                 <br><br>
-                                <a href = "attempt_quiz.html"> Attempt Quiz </a>
+                                <a href="attempt_quiz.html"> Attempt Quiz </a>
                             </p>
                         </div>
-                        
                     </td>
                     <td class="course">
                         <div>
                             <img src="course1.jpg" width="250">
+                            <h4 class="course-name">Course Name: Data Structures </h4>
                             <p>
-                                Course Name: Data Structures 
-                                <br><br>
                                 Course Code: DS371
                                 <br><br>
-                                <a href = "attempt_quiz.html"> Attempt Quiz </a>
+                                <a href="attempt_quiz.html"> Attempt Quiz </a>
                             </p>
                         </div>   
                     </td>
-
                     <td class="course">
                         <div>
                             <img src="course1.jpg" width="250">
+                            <h4 class="course-name">Course Name: DBMS </h4>
                             <p>
-                                Course Name: DBMS
-                                <br><br>
                                 Course Code: DB346
                                 <br><br>
-                                <a href = "attempt_quiz.html"> Attempt Quiz </a>
+                                <a href="attempt_quiz.html"> Attempt Quiz </a>
                             </p>
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr id="enrolled2">
                     <td class="course">
                         <div> 
                             <img src="course1.jpg" width="250">
+                            <h4 class="course-name">Course Name: Software Testing </h4>
                             <p>
-                                Course Name: Software Testing
-                                <br><br>
                                 Course Code: ST484
                                 <br><br>
-                                <a href = "attempt_quiz.html"> Attempt Quiz </a>
+                                <a href="attempt_quiz.html"> Attempt Quiz </a>
                             </p>
                         </div>           
                     </td>
                     <td class="course">
                         <div> 
                             <img src="course1.jpg" width="250">
+                            <h4 class="course-name">Course Name: Software Architectures </h4>
                             <p>
-                                Course Name: Software Architectures
-                                <br><br>
                                 Course Code: SA396
                                 <br><br>
-                                <a href = "attempt_quiz.html"> Attempt Quiz </a>
+                                <a href="attempt_quiz.html"> Attempt Quiz </a>
                             </p> 
                         </div>
                     </td>
                 </tr>           
             </table>
-            
-            
-            <h3 id = "About"> Pending Invitations </h3>
+
+            <h3 id="About"> Pending Invitations </h3>
             <hr>           
             <table>
-               
                 <tr>
-                    <td class="course">
+                    <td class="course" id="pending">
                         <div>
-                            <img src="course2.jpg" width="250">
+                            <img id="img" src="course2.jpg" width="250">
+                            <h4 class="course-name">Course Name: Data Science </h4>
                             <p>
-                                Course Name: Data Science
-                                <br><br>
                                 Course Code: DS102
                                 <br><br>
-                                <button type="button" class="accept">Accept</button> <button type="button" class="decline">Decline</button>
+                                <button onclick="handleClick(event)" type="button" class="accept">Accept</button> <button onclick="handleClick(event)" type="button" class="decline">Decline</button>
                             </p>
                         </div>
                     </td>
-
-                    <td class="course">
+                    <td class="course" id="pending2">
                         <div>
-                            <img src="course2.jpg" width="250">
+                            <img id="img2" src="course2.jpg" width="250">
+                            <h4 class="course-name">Course Name: Machine Learning </h4>
                             <p>
-                            Course Name: Machine Learning
-                            <br><br>
-                            Course Code: ML105
-                            <br><br>
-                            <button type="button" class="accept">Accept</button> <button type="button" class="decline">Decline</button>
+                                Course Code: ML105
+                                <br><br>
+                                <button onclick="handleClick2(event)" type="button" class="accept">Accept</button> <button onclick="handleClick2(event)" type="button" class="decline">Decline</button>
                             </p>    
                         </div>
                     </td>
                 </tr>
             </table>
         </main>
-        <footer> <p>&copy; 2025 LMS. All rights reserved. </p> </footer>
+
+        <footer> 
+            <p>&copy; 2025 LMS. All rights reserved. </p> 
+        </footer>
     </body>
 </html>
-
