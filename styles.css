@@ -379,3 +379,53 @@ button {
     border: 2px solid black;
 }
 
+/* ============================= */
+/* Assignment 3 */
+/* ============================= */ 
+
+/* Highlight Course Name */
+
+.course-name:hover {
+    background-color: #ffffff
+}
+
+/* ============================= */
+/* Signup Page Styling
+/* ============================= */ 
+
+#signup-title {
+    color: #004080;
+}
+/* Signup button Styling */ 
+
+#signup {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+    font-size: 16px;
+}
+
+#signup:hover {
+    background-color: #45A049;
+    opacity: 1.0;
+}
+
+
+/* Error message box styling */
+
+#signup-form {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.error-box {
+    display: none; /* Initially hidden */
+    background-color: rgb(242, 239, 239);
+    border: solid black 1px;
+    border-radius: 5px; 
+}
+
+
