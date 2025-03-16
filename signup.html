@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html>
+    <header>
+        <link rel="stylesheet" href="styles.css">
+        <title> Sign Up - LMS </title>
+        <img src="logo.jpg" width="150" height="150"> 
+        <h1>LMS - Learning Management System</h1>    
+    </header>
+    
+    <body>
+    <nav>
+        <a href="index.html">Homepage</a>
+    </nav><br><br>
+    <h2 id="signup-title"> Sign Up</h2>
+    <main>
+        <form id="signup-form">
+            <label for="username" minlength="3" maxlength="20">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"> <br><br>
+            <button type="submit" id="signup">Sign Up</button>
+        </form>
+        <div id="error-message" class="error-box"></div>
+       
+    </main>
+
+    <footer><p>&copy; 2025 LMS. All rights reserved.</p> </footer>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', validateForm);
+
+        function validateForm(event) {
+            event.preventDefault(); 
+
+            let username = document.getElementById('username').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let confirmPassword = document.getElementById('confirm-password').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let errorBox = document.getElementById('error-message');
+            let errors = [];
+            let usernameReason = [];
+            let passwordReason = [];
+            let emailReason = [];
+    
+  
+            if (username.length < 3 || username.length > 20) {
+                usernameReason.push("Username must be between 3 and 20 characters long");
+            }
+            if (!/^[a-zA-Z]/.test(username)) {
+                usernameReason.push("Username must start with a letter");
+            }
+            if (!/^[a-zA-Z0-9_-]+$/.test(username)) {
+                usernameReason.push("Username can only contain letters, numbers, hyphens, and underscores");
+            }
+            if (/\s/.test(username)) {
+                usernameReason.push("Username cannot contain spaces");
+            }
+            if (usernameReason.length > 0) {
+                errors.push(`Invalid username. Reason(s): ${usernameReason.join(", ")}`);
+            }
+
+    
+            if (password.length < 8) {
+                passwordReason.push("Password must be at least 8 characters long");
+            }
+            if (!/[A-Z]/.test(password)) {
+                passwordReason.push("Password must contain at least one uppercase letter");
+            }
+            if (!/[a-z]/.test(password)) {
+                passwordReason.push("Password must contain at least one lowercase letter");
+            }
+            if (!/\d/.test(password)) {
+                passwordReason.push("Password must contain at least one number");
+            }
+            if (!/[!@#$%^&*()\-_=+\[\]{}|;:'\",.<>?/`~]/.test(password)) {
+                passwordReason.push("Password must contain at least one special character");
+            }
+            if (/\s/.test(password)) {
+                passwordReason.push("Password cannot contain spaces");
+            }
+            if (passwordReason.length > 0) {
+                errors.push(`Invalid password. Reason(s): ${passwordReason.join(", ")}`);
+            }
+
+    
+            if (password !== confirmPassword) {
+                errors.push("Passwords do not match.");
+            }
+
+    
+            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|io)$/.test(email)) {
+                emailReason.push("Enter a valid email address");
+            }
+            if (/\s/.test(email)) {
+                emailReason.push("Email cannot contain spaces");
+            }
+            if (emailReason.length > 0) {
+                errors.push(`Invalid email. Reason(s): ${emailReason.join(", ")}`);
+            }
+
+    
+            if (errors.length > 0) {
+                errorBox.style.display = 'block';
+                errorBox.innerHTML = errors.join("<br>");
+            } else {
+                errorBox.style.display = 'block'; 
+                errorBox.innerHTML = " Signup successful! Redirecting to login...";  
+                setTimeout(() => {
+                    window.location.href = "login.html"; 
+                }, 3000);              
+            }
+            return false; 
+        }
+            
+    </script>
+    </body>
+</html>
