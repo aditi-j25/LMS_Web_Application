@@ -10,6 +10,10 @@ body {
     background-color: #d4d4d4;
     }
 
+main a:link, a:visited {
+    color: rgb(69, 20, 130);
+}
+
 /* ============================= */
 /* Header Styling (All Pages) */
 /* ============================= */
@@ -110,14 +114,11 @@ main form {
     background-color: darkgrey;
     padding: 30px;
     height:100%;
-    margin: 0 0 150px ;
     border-radius: 30px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
-main form *{
-    margin-bottom: 10px;
-}
+
 main form label{
     font-weight: bold;
 }
@@ -154,12 +155,12 @@ input:focus, button:focus {
 
 
 /* Forgot Password Link */
-.forgot-password {
+#forgot-password {
     color: #004080;
     text-decoration: none;
 }
 
-.forgot-password:hover {
+#forgot-password:hover {
     text-decoration: underline;
 }
 
