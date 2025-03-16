@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="styles.css">
 		<title> Login - LMS </title>
 		<img src="logo.jpg" width="150" height="150"> 
-		<h1>LMS - Learning Management System</h1>	
+		<h1>LMS - Learning Management System</h1>
 	</header>
 	
 	<body>
@@ -14,18 +14,63 @@
 	<h3 id="login"> LMS Login</h3>
 	
 	<main>
-		<form>
+		<form id="loginForm">
 			<label for="username">Username</label>
-			<input type="text" id="username" name="username"><br><br>
+			<input type="text" id="username" name="username" required><br><br>
 			<label for="password">Password</label>
-			<input type="password" id="password" name="password">
+			<input type="password" id="password" name="password" required>
 			<br>
 		</form>
-		<a href="course_view.html"> <button id="loginbutton">Login</button> </a> 
+		<br>
+		<button type="button" id="loginbutton">Login</button> </a> 
 		<br><br>
-		<a href="#login">Forgot Password?</a>
+		<label id="forgot-password">Forgot Password?</label><br>
+		<a href="signup.html">Don't have an account? Sign up</a> 
+		<br><br>
+		<div id="messageBox" class="message-box" style="border:3px solid black; padding:10px; display:none"></div>
 	
 	</main>
+
+	<script>
+		document.getElementById("loginbutton").addEventListener("click", function(){
+
+			const username= document.getElementById("username").value.trim();
+			const password= document.getElementById("password").value.trim();
+			
+			if (!username || !password){
+				showMessage("Error: Please enter both username and password", "error");
+				return;
+			}
+
+			fetch('https://jsonplaceholder.typicode.com/users')
+				.then(response=>response.json())
+				.then(users=>{
+					const user = users.find(user=> user.username ==username);
+					if (!user || user.email!=password){
+						showMessage("Invalid username or password!","error");
+						document.getElementById("password").value="";
+						document.getElementById("password").focus();
+						return;
+					} else{
+						showMessage("Login successful! Redirecting...","success")
+						setTimeout(()=>{
+							window.location.href="course_view.html";
+						},2000) //waits for 2 secs
+					}
+				})
+				.catch(error=>{
+					showMessage("Error: Unable to fetch user data.\n Please Try Again later","error");
+				});
+			});
+			function showMessage(message,type){
+				const messageBox= document.getElementById("messageBox");
+				messageBox.textContent=message;
+				messageBox.className=`message-box ${type}`;
+				messageBox.style.display="block";
+			}
+		
+	</script>
+
 
 	<footer><p>&copy; 2025 LMS. All rights reserved.</p> </footer>
 	</body>
