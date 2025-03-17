@@ -50,7 +50,7 @@
             if (username.length < 3 || username.length > 20) {
                 usernameReason.push("Username must be between 3 and 20 characters long");
             }
-            if (!/^[a-zA-Z]/.test(username)) {
+            if (!/^[a-zA-Z]/.test(username)) {   // Using regex to check form validation
                 usernameReason.push("Username must start with a letter");
             }
             if (!/^[a-zA-Z0-9_-]+$/.test(username)) {
@@ -60,7 +60,7 @@
                 usernameReason.push("Username cannot contain spaces");
             }
             if (usernameReason.length > 0) {
-                errors.push(`Invalid username. Reason(s): ${usernameReason.join(", ")}`);
+                errors.push(`Invalid username. Reason(s): ${usernameReason.join(", ")}`); // If there is an error with the username (or many), join it to the "error" array (2D array)
             }
 
     
@@ -104,18 +104,17 @@
 
     
             if (errors.length > 0) {
-                errorBox.style.display = 'block';
-                errorBox.innerHTML = errors.join("<br>");
+                errorBox.style.display = 'block'; // Usig DOM and CSS to display error box
+                errorBox.innerHTML = errors.join("<br>"); // Adding a line in between each element of the "error" array 
             } else {
                 errorBox.style.display = 'block'; 
                 errorBox.innerHTML = " Signup successful! Redirecting to login...";  
-                setTimeout(() => {
+                setTimeout(() => {             // Using setTimeout() to redirect the user to the login page, this way they are able to see the successful message and be redirected in 3s 
                     window.location.href = "login.html"; 
                 }, 3000);              
             }
             return false; 
-        }
-            
+        }         
     </script>
     </body>
 </html>
